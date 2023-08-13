@@ -1,0 +1,82 @@
+{
+  "name": "cloudflared-tunnel",
+  "version": "0.0.0",
+  "description": "a smiple tool automates running a cloudflared-tunnel for exposing your localhost to the world! it could be used as a standalone cli or imported into other libraries",
+  "author": "Ahmed Rowaihi @ahmedrowaihi",
+  "bin": {
+    "cf-tunnel": "./bin/run"
+  },
+  "homepage": "https://github.com/ahmedrowaihi/cloudflared-tunnel",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "repository": "https://github.com/ahmedrowaihi/cloudflared-tunnel",
+  "files": [
+    "/bin",
+    "/dist",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "dependencies": {
+    "@oclif/core": "^2",
+    "@oclif/plugin-help": "^5",
+    "@oclif/plugin-plugins": "^3.2.0",
+    "cloudflared": "^0.4.0",
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@oclif/test": "^2.4.4",
+    "@types/chai": "^4",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^20.4.10",
+    "@types/readline-sync": "^1.4.4",
+    "chai": "^4",
+    "eslint": "^7.32.0",
+    "eslint-config-oclif": "^4",
+    "eslint-config-oclif-typescript": "^1.0.3",
+    "mocha": "^9",
+    "oclif": "^3.11.3",
+    "prettier": "^3.0.1",
+    "shx": "^0.3.3",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.6.1",
+    "typescript": "^4.9.5"
+  },
+  "oclif": {
+    "bin": "cf-tunnel",
+    "dirname": "cf-tunnel",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "hello": {
+        "description": "Say hello to the world and others"
+      }
+    },
+    "hooks": {
+      "init": [
+        "./dist/hooks/init/init"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "lint": "eslint . --ext .ts --config .eslintrc",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "yarn lint",
+    "prepack": "yarn build && oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "bugs": "https://github.com/ahmedrowaihi/cloudflared-tunnel/issues",
+  "keywords": [
+    "oclif"
+  ],
+  "types": "dist/index.d.ts",
+  "private": false
+}
