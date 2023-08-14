@@ -6,4 +6,3 @@ export default class Setup extends Command {
     await setup()
   }
 }
-

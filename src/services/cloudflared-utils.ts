@@ -1,11 +1,11 @@
+import {ux} from '@oclif/core'
 import {bin, install, tunnel} from 'cloudflared'
 import {ChildProcess, spawnSync} from 'node:child_process'
 import {existsSync, readFileSync, readdirSync, writeFileSync} from 'node:fs'
 import {homedir} from 'node:os'
 import {resolve} from 'node:path'
-import {question} from 'readline-sync'
-import {indecator} from '../utils'
 import {stdout} from 'node:process'
+import {question} from 'readline-sync'
 
 let stop: ChildProcess['kill'] | undefined
 
@@ -23,10 +23,10 @@ export function resetConfig(): void {
 }
 
 type IConfig = {
-	domain: string
-	tunnelCreated: boolean
-	routeDns: boolean
-	tunnelId: string
+  domain: string
+  tunnelCreated: boolean
+  routeDns: boolean
+  tunnelId: string
 }
 export function getConfig(): IConfig {
   return JSON.parse(readFileSync(resolve(CLOUDFLARED_USR_DIR, TUNNELNAME), {encoding: 'utf-8'}).toString())
@@ -53,7 +53,7 @@ export function updateConfig(config: Partial<IConfig>): void {
   writeFileSync(CONFIG_FILE, JSON.stringify({...getConfig(), ...config}), {encoding: 'utf-8'})
 }
 
-type Tunnel = { id: string; name: string }
+type Tunnel = {id: string; name: string}
 export function isRemoteTunnelExist(): Tunnel | undefined {
   const result = spawnSync(bin, ['tunnel', 'list'])
   let tunnel: Tunnel | undefined
@@ -113,13 +113,16 @@ export function routeDnsToTunnel(): void {
   if (result.status === 0) updateConfig({routeDns: true})
 }
 
-export async function startTunnel({port, host}: { port: number; host: string }): Promise<void> {
+export async function startTunnel({port, host}: {port: number; host: string}): Promise<void> {
   routeDnsToTunnel()
-  const spinner = indecator()
-  spinner.start('Starting tunnel...')
+  ux.action.start('Starting tunnel...')
   const {url, connections, child, stop: _stop} = tunnel({'--url': `${host}:${port}`, tunnel: TUNNELNAME})
-  console.log(`\n===================================\nExposing: ${host}:${port}\nSecure tunnel URL: ${await url}\nConnections Ready! ${JSON.stringify(await Promise.all(connections))}\n===================================\n`)
-  spinner.stop('Tunnel started. Press Ctrl+C to stop.')
+  console.log(
+    `\n===================================\nExposing: ${host}:${port}\nSecure tunnel URL: ${await url}\nConnections Ready! ${JSON.stringify(
+      await Promise.all(connections),
+    )}\n===================================\n`,
+  )
+  ux.action.stop('Tunnel started. Press Ctrl+C to stop.')
 
   stop = _stop
   await new Promise(resolve => {
@@ -134,13 +137,7 @@ export function stopTunnel(): void {
 }
 
 export async function installBinary(): Promise<void> {
-  if (isInstalled()) {
-    stdout.write('Cloudflared binary found. Skipping installation.')
-    return
-  }
-
-  const spinner = indecator()
-  spinner.start('Installing cloudflared binary...')
+  ux.action.start('Installing cloudflared binary...')
   const installResult = (await install(bin)
   .then(() => ({
     text: 'Installed cloudflared binary.',
@@ -151,10 +148,10 @@ export async function installBinary(): Promise<void> {
     type: 'error',
     error: error,
   }))) as {
-		text: string
-		type: 'success' | 'error'
-		error?: Error
-	}
-  spinner.stop(installResult.text)
+    text: string
+    type: 'success' | 'error'
+    error?: Error
+  }
+  ux.action.stop(installResult.text)
   if (installResult.error) throw installResult.error
 }
