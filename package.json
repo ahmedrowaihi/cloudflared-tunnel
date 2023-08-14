@@ -1,6 +1,6 @@
 {
   "name": "cloudflared-tunnel",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "a smiple tool automates running a cloudflared-tunnel for exposing your localhost to the world! it could be used as a standalone cli or imported into other libraries",
   "author": "Ahmed Rowaihi @ahmedrowaihi",
   "bin": {
