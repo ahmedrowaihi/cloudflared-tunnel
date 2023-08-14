@@ -1,0 +1,13 @@
+diff --git a/node_modules/@types/cacheable-request/index.d.ts b/node_modules/@types/cacheable-request/index.d.ts
+index 832f9b9..c5e8c69 100644
+--- a/node_modules/@types/cacheable-request/index.d.ts
++++ b/node_modules/@types/cacheable-request/index.d.ts
+@@ -12,7 +12,7 @@ import { URL } from 'url';
+ import { EventEmitter } from 'events';
+ import { Store } from 'keyv';
+ import { Options as CacheSemanticsOptions } from 'http-cache-semantics';
+-import ResponseLike = require('responselike');
++import ResponseLike from 'responselike';
+ 
+ export = CacheableRequest;
+ 
