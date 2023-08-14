@@ -1,10 +1,10 @@
-# Cloudlfare-tunnel
+# Cloudflared Tunnel
 
-A smiple tool automates running a cloudflared-tunnel for exposing your localhost to the world! it could be used as a standalone cli or imported into other libraries CLI's
+A simple tool automates running a Cloudflare-Tunnel for exposing your local host to the world! it could be used as a standalone CLI or imported into other libraries CLI's
 
-[![Version](https://img.shields.io/npm/v/cloudflared-tunnel.svg)](https://npmjs.org/package/cloudflared-tunnel) [![cloudlfare-tunnel](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io) [![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main) ![GitHub license](https://img.shields.io/crates/l/MIT)
+[![Version](https://img.shields.io/npm/v/cloudflared-tunnel.svg)](https://npmjs.org/package/cloudflared-tunnel) [![cloudflared-tunnel](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io) [![CircleCI](https://circleci.com/gh/oclif/hello-world/tree/main.svg?style=shield)](https://circleci.com/gh/oclif/hello-world/tree/main) ![GitHub license](https://img.shields.io/crates/l/MIT)
 
-- [Cloudlfare-tunnel](#cloudlfare-tunnel)
+- [Cloudflared Tunnel](#cloudflared-tunnel)
   - [Pre-requisites](#pre-requisites)
   - [Usage CLI](#usage-cli)
     - [Install CLI](#install-cli)

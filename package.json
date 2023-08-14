@@ -1,7 +1,7 @@
 {
   "name": "cloudflared-tunnel",
   "version": "1.0.0",
-  "description": "a smiple tool automates running a cloudflared-tunnel for exposing your localhost to the world! it could be used as a standalone cli or imported into other libraries",
+  "description": "A simple tool automates running a Cloudflare-Tunnel for exposing your local host to the world! it could be used as a standalone CLI or imported into other libraries CLI's",
   "author": "Ahmed Rowaihi @ahmedrowaihi",
   "bin": {
     "cf-tunnel": "./bin/run"
