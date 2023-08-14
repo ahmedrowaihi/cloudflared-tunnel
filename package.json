@@ -1,6 +1,6 @@
 {
   "name": "cloudflared-tunnel",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple tool automates running a Cloudflare-Tunnel for exposing your local host to the world! it could be used as a standalone CLI or imported into other libraries CLI's",
   "author": "Ahmed Rowaihi @ahmedrowaihi",
   "bin": {
