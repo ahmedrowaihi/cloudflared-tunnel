@@ -19,7 +19,7 @@
   "dependencies": {
     "@oclif/core": "^2",
     "@oclif/plugin-help": "^5",
-    "@oclif/plugin-plugins": "^3.2.6",
+    "@oclif/plugin-plugins": "^3.3.0",
     "cloudflared": "^0.4.0",
     "readline-sync": "^1.4.10"
   },
