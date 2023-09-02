@@ -24,7 +24,7 @@
     "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "@oclif/test": "^2.4.7",
+    "@oclif/test": "^2.5.1",
     "@types/chai": "^4",
     "@types/mocha": "^9.0.0",
     "@types/node": "^20.5.8",
