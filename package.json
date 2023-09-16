@@ -6,6 +6,10 @@
   "bin": {
     "cf-tunnel": "./bin/run"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "homepage": "https://github.com/ahmedrowaihi/cloudflared-tunnel",
   "license": "MIT",
   "main": "dist/index.js",
