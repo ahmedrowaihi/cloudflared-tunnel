@@ -1041,10 +1041,10 @@
   resolved "https://registry.npmjs.org/@types/normalize-package-data/-/normalize-package-data-2.4.1.tgz"
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
 
-"@types/readline-sync@^1.4.5":
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/@types/readline-sync/-/readline-sync-1.4.5.tgz#8e0207707eb73e667d5fa140d6e6ea757f604f91"
-  integrity sha512-vD/LCH84gWf9CoJaqGL8Ey0/oFrgHNEf/R/SPzoDeZa5Zr8Fh5tPCaTF2UC/m1shAcAHVHHZmDQrsoWMkCj0gA==
+"@types/readline-sync@^1.4.6":
+  version "1.4.6"
+  resolved "https://registry.yarnpkg.com/@types/readline-sync/-/readline-sync-1.4.6.tgz#200bcb07cd3bd6f316a97b70ebce7470ff342a57"
+  integrity sha512-PdvRkoeM8EYvm3XDj139uyqeYzbOSF+ytyDKuBUXqpf80NBRUtZWQm4qfFw8mhj34f+HIxWPghFnPUTlEi48Bg==
 
 "@types/responselike@^1.0.0":
   version "1.0.0"
