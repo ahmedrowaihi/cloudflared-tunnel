@@ -1,4 +1,4 @@
-# Cloudflared Tunnel
+# Cloudflared Tunnel | Archived, you can use [untun](https://github.com/unjs/untun)
 
 A simple tool automates running a Cloudflare-Tunnel for exposing your local host to the world! it could be used as a standalone CLI or imported into other libraries CLI's
 
